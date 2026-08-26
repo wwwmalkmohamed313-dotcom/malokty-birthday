@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday ملوكتي 💗</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;color:#61213e;background:linear-gradient(#ffe0ec,#fff7fa,#ffe7f1);overflow-x:hidden}
+body:before{content:"💗  💕  ♡  💗  💕  ♡  💗  💕  ♡";position:fixed;inset:0;opacity:.12;font-size:32px;line-height:2.5;word-spacing:28px;pointer-events:none;z-index:0;transform:rotate(-8deg)}
+.wrap{width:min(760px,92%);margin:auto;position:relative;z-index:1}
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px 16px;background:radial-gradient(circle at 50% 35%,#ff8fbc66,transparent 42%)}
+.hero,.card{background:#ffffffdf;border:2px solid #fff;border-radius:30px;box-shadow:0 14px 40px #c93f7130}
+.hero{padding:40px 20px}.mini{color:#d54d7f;font-weight:bold;font-size:17px}.name{font-size:clamp(28px,7vw,48px);font-weight:bold;color:#c62e69;margin:12px 0}
+.hero h1{font-size:clamp(55px,13vw,100px);font-weight:800;color:#ef5e97;margin:5px 0;text-shadow:0 5px 0 #fff}.hero p{font-size:24px;color:#7a294d}
+button{border:0;border-radius:999px;padding:14px 28px;background:linear-gradient(135deg,#ff72a8,#d93673);color:#fff;font:bold 17px Arial;box-shadow:0 10px 25px #d9367350}
+section{padding:24px 0}.card{padding:26px 20px}.title{text-align:center;color:#c62e69;font-size:27px;margin:0 0 22px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.time{background:#fff1f7;border:1px solid #ff9fc3;border-radius:20px;padding:14px 7px;text-align:center}.num{font-size:32px;font-weight:bold;color:#e34c87}.label{color:#8e3b5c}
+.audioBox{text-align:center}.audioBox input{display:block;width:100%;padding:12px;border-radius:16px;border:1px solid #ff9fc3;background:#fff6fa;color:#7a294d}
+audio{width:100%;margin-top:15px}.photos{display:flex;flex-direction:column;gap:20px;max-width:520px;margin:auto}
+.photo{width:100%;background:#fff0f6;padding:10px 10px 14px;box-shadow:0 10px 25px #b7356930;border-radius:5px}
+.photo img{width:100%;aspect-ratio:1/1.12;object-fit:cover;background:#ffd4e5}.photo.empty{display:flex;align-items:center;justify-content:center;border:2px dashed #ff82ad;background:#fff0f6;cursor:pointer;position:relative;padding-bottom:62px}
+.photo.empty .add{text-align:center;color:#d34d7f;font-size:18px}.plus{font-size:46px;color:#f05d98;display:block;line-height:1;margin-bottom:8px}.photo input.photoInput{display:none}.caption{display:block!important;width:100%;margin-top:10px;padding:10px 12px;border:1px solid #ff9fc3;border-radius:14px;background:#fff;color:#7a294d;font:15px Arial;text-align:center;outline:none}.caption::placeholder{color:#c27a99}
+.longmsg{line-height:2.15;font-size:17px;color:#633049}.longmsg p{margin:0 0 18px}
+.quote{text-align:center;font-size:22px;color:#c62e69;background:#fff;border:2px dashed #ff91b7;border-radius:25px;padding:24px}
+footer{text-align:center;padding:35px;color:#b24a73}
+
+.celebrate{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}.celebrate .heart{position:absolute;top:-60px;font-size:30px;animation:fall linear forwards}.celebrate .balloon{position:absolute;bottom:-130px;font-size:62px;animation:rise ease-out forwards}@keyframes fall{to{transform:translateY(115vh) rotate(360deg);opacity:.15}}@keyframes rise{to{transform:translateY(-120vh);opacity:0}}.birthday-pop{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.7);z-index:21;background:#ffffffee;border:3px solid #ff9fc3;border-radius:30px;padding:28px 24px;text-align:center;box-shadow:0 20px 70px #d9367355;opacity:0;pointer-events:none;transition:.35s}.birthday-pop.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.birthday-pop h2{color:#e34c87;margin:0 0 8px;font-size:30px}.birthday-pop p{color:#7a294d;font-size:20px;margin:0}
+@media(max-width:600px){.countdown{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="hero wrap">
+<div class="mini">💗 مفاجأة صغيرة ليكي 💗</div>
+<div class="name">ملوكتي 💗</div>
+<h1>Happy Birthday</h1><p>كل سنة وإنتي حتة مني 💗</p>
+<button id="openSurprise">إنجزي وافتحي هنا 💗</button>
+</div></header>
+
+<div id="celebrate" class="celebrate"></div><div id="birthdayPop" class="birthday-pop"><h2>🎉 كل سنة وإنتي طيبة يا ملوكتي 💗</h2><p>يلا بينا نشوف المفاجأة 🥹🫂</p></div>
+<main id="surprise" class="wrap">
+<section><div class="card">
+<h2 class="title">🎂 عيد ميلاد ملوكتي قرب 🎂</h2>
+<div class="countdown">
+<div class="time"><div class="num" id="days">00</div><div class="label">يوم</div></div>
+<div class="time"><div class="num" id="hours">00</div><div class="label">ساعة</div></div>
+<div class="time"><div class="num" id="mins">00</div><div class="label">دقيقة</div></div>
+<div class="time"><div class="num" id="secs">00</div><div class="label">ثانية</div></div>
+</div></div></section>
+
+<section><div class="card audioBox">
+<h2 class="title">🎵 الأغنية بتاعتنا 💗</h2>
+<input id="songPicker" type="file" accept="audio/*"><audio id="player" controls style="display:none"></audio>
+</div></section>
+
+<section><div class="card">
+<h2 class="title">ذكرياتنا 💗</h2>
+<p style="text-align:center;color:#9a4b6c">إنجزي وحطي صورك هنا واحدة واحدة 🥹🫂</p>
+<div class="photos" id="photoGrid"></div>
+</div></section>
+
+<section><div class="card">
+<h2 class="title">💌 المسدج بتاعتي لملوكتي 💌</h2>
+<div class="longmsg"><p>اليوم مش يومك لوحدك حقيقي بما اني بحس انك حته من روحي ومش بس البت صحبتي حقيقي ممتنه اوي لعلاقتنا وممتنه جدا لإسمنا المشترك الى عمره مكان بالنسبالى اسم وخلاص بحسك فعلا جزء مني ملك تانيه بشخصيه تانيه بس اكتر ملك شبهي واحلي ملك فحياتي كلها والله 🥹🫂</p><p>كل سنه وانتي حته مني كل سنه وانتي اطيب واحده واحلي واحده سنه سعيده عليكي ويوم اسعد وبدايه خير ليكي وعليكي متستاهليش غير كل خير وحلو شبهك اصلا 💗</p><p>كل سنه وانتي طيبه اوي واحن واحده عليا وفالدنيا ربنا يخليكي ليا لانك حقيقي الجزء المشترك فحياتي كلها وفكل كبيره وصغيره 🫂🥹</p><p>تحووويشه عمري والله واغلي حد علي قلبي ومنغير تردد اقرب واحده فحياه ملك بل حياه ملك اصلا والله اكتر حد بيطمني وبيفهمني فالدنيا علاقتنا محدش هيفهمها غيرنا 😍👀🫵</p><p>حقيقي يكفيني اني طلعت من الدنيا ببنوته سكر زيك واهل سكر زي اهلك حقيقي بحسه بيتي وانتي مش بس اختي اهلك كمان اهلي واخواتك اخواتي ربنا يخليكي لينا ينن عيوني انتي وميرحمناش منك ابدا 🤲🫶</p><p>ربنا يديم علينا هبلك وتفاصيلك الصغيره موت الى قرفانا بيها دي بقالى ساعه بكتب خايفه احط قلب غير البينك 🙆‍♀️😂💗</p><p>بحبك اوي اوي يملوكه كل سنه وانتي معايا وكل سنه واحنا بنحب بعض ومع بعض طول العمر ويعين الى مش عاجبه علاقتنا بق 🙂‍↔️😂💗</p><p>Happy Birthday ya hetaa menee🥹💗🫂</p></div>
+</div></section>
+
+<section><div class="quote">💗 ملك تانية بشخصية تانية... بس أكتر ملك شبهي وأحلى ملك فحياتي كلها 🥹🫂💗</div></section>
+</main>
+<footer>Made with a whole lot of pink hearts for ملوكتي 💗👑</footer>
+
+<script>
+
+const openSurprise=document.getElementById("openSurprise"), celebrate=document.getElementById("celebrate"), birthdayPop=document.getElementById("birthdayPop");
+openSurprise.addEventListener("click",()=>{
+  celebrate.innerHTML="";
+  const hearts=["💗","💕","💖","💞","🩷","♡"];
+  for(let i=0;i<34;i++){const e=document.createElement("span");e.className="heart";e.textContent=hearts[Math.floor(Math.random()*hearts.length)];e.style.left=Math.random()*100+"%";e.style.animationDuration=(2.5+Math.random()*3.5)+"s";e.style.animationDelay=(Math.random()*1.5)+"s";celebrate.appendChild(e)}
+  const balloons=["🎈","🎀","💗","🎈","🩷"];
+  for(let i=0;i<12;i++){const e=document.createElement("span");e.className="balloon";e.textContent=balloons[Math.floor(Math.random()*balloons.length)];e.style.left=Math.random()*100+"%";e.style.animationDuration=(4+Math.random()*3)+"s";e.style.animationDelay=(Math.random()*1.5)+"s";celebrate.appendChild(e)}
+  birthdayPop.classList.add("show"); setTimeout(()=>birthdayPop.classList.remove("show"),2200);
+  setTimeout(()=>document.getElementById("surprise").scrollIntoView({behavior:"smooth"}),650);
+});
+const birthday=new Date("2026-08-27T00:00:00");
+function pad(n){return String(Math.max(0,n)).padStart(2,"0")}
+function tick(){const d=Math.max(0,birthday-new Date()),s=Math.floor(d/1000);
+document.getElementById("days").textContent=pad(Math.floor(s/86400));
+document.getElementById("hours").textContent=pad(Math.floor(s%86400/3600));
+document.getElementById("mins").textContent=pad(Math.floor(s%3600/60));
+document.getElementById("secs").textContent=pad(s%60)}
+setInterval(tick,1000);tick();
+
+const grid=document.getElementById("photoGrid");
+for(let i=1;i<=16;i++){
+ const box=document.createElement("label");box.className="photo empty";
+ box.innerHTML='<input class="photoInput" type="file" accept="image/*"><span class="add"><span class="plus">＋</span>إضافة صورة<br><small>ذكرى '+i+' 💗</small></span>';
+ const input=box.querySelector(".photoInput");
+ input.addEventListener("change",()=>{
+  const f=input.files[0];if(!f)return;const url=URL.createObjectURL(f);
+  box.className="photo";
+  box.innerHTML='<img src="'+url+'" alt="ذكرى '+i+'"><input class="caption" type="text" placeholder="اكتبي جملة للذكرى دي 💗">';
+  const ni=box.querySelector(".photoInput");
+ });
+ grid.appendChild(box)
+}
+const picker=document.getElementById("songPicker"),player=document.getElementById("player");
+picker.addEventListener("change",()=>{const f=picker.files[0];if(f){player.src=URL.createObjectURL(f);player.style.display="block"}});
+</script>
+</body></html>
